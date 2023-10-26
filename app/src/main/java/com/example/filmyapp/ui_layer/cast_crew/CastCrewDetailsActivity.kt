@@ -167,7 +167,7 @@ class CastCrewDetailsActivity : AppCompatActivity() {
             fragment.dismiss()
         } else {
 
-            super.onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         }
     }
 }

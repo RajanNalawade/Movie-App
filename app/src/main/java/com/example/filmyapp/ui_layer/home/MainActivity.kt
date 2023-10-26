@@ -147,7 +147,7 @@ class MainActivity : AppCompatActivity() {
             if (viewModelSearch.isSearchOpen.value) {
                 viewModelSearch.closeSearch()
             } else {
-                super.onBackPressed()
+                onBackPressedDispatcher.onBackPressed()
             }
         }
     }

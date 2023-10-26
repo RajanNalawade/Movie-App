@@ -108,9 +108,10 @@ class YoutubeWebviewActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+
     override fun onBackPressed() {
         if (supportFragmentManager.backStackEntryCount == 0) {
-            super.onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         } else {
             supportFragmentManager.popBackStack()
         }
