@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:icon="@drawable/dark_mode"
+        android:key="darkMode"
+        android:title="@string/dark"
+        android:widgetLayout="@layout/preference_material_switch" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:icon="@drawable/ic_photo"
+        android:key="imagequality"
+        android:summaryOff="@string/low"
+        android:summaryOn="@string/high"
+        android:title="@string/image"
+        android:widgetLayout="@layout/preference_material_switch" />
+
+    <Preference
+        android:enabled="true"
+        android:icon="@drawable/ic_article"
+        android:key="license"
+        android:selectable="true"
+        android:summary=""
+        android:title="@string/license" />
+
+    <Preference
+        android:enabled="true"
+        android:icon="@drawable/ic_document"
+        android:key="Version"
+        android:selectable="true"
+        android:summary="3.0.0"
+        android:title="@string/version" />
+
+    <Preference
+        android:enabled="true"
+        android:icon="@drawable/twotone_share_24"
+        android:key="Share"
+        android:selectable="true"
+        android:title="@string/shareappdetails" />
+
+    <Preference
+        android:enabled="true"
+        android:icon="@drawable/ic_face"
+        android:key="About"
+        android:selectable="true"
+        android:title="@string/about" />
+
+
+</PreferenceScreen>

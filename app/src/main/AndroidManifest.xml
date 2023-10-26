@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".di.FilmyApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:resizeableActivity="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.MD3"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui_layer.youtube_webview.YoutubeWebviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui_layer.home.MainActivity"
+            android:configChanges="uiMode"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="example.filmyapp.com"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".ui_layer.intro.FilmyIntroActivity"
+            android:label=" "
+            android:theme="@style/AppTheme.MD3.Dark" />
+        <activity
+            android:name=".ui_layer.details.MovieDetailsActivity"
+            android:label=" "
+            android:theme="@style/AppTheme.MD3.Details" />
+        <activity
+            android:name=".ui_layer.cast_crew.CastCrewDetailsActivity"
+            android:label="@string/details"
+            android:theme="@style/AppTheme.MD3" />
+        <activity
+            android:name=".ui_layer.cast_crew.AllCastCrewActivity"
+            android:label=" "
+            android:theme="@style/AppTheme.MD3" />
+        <activity
+            android:name=".ui_layer.full.AllMoviesActivity"
+            android:label="@string/title_activity_full_movie"
+            android:theme="@style/AppTheme.MD3" />
+        <activity
+            android:name=".ui_layer.full.FullBannerActivity"
+            android:label=" "
+            android:theme="@style/AppTheme.MD3.Dark" />
+        <activity android:name=".ui_layer.settings.LicenseActivity" />
+        <activity android:name=".ui_layer.settings.AboutActivity" />
+    </application>
+
+</manifest>
